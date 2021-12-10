@@ -1,0 +1,14 @@
+name: apertium-xxx-yyy CI/CD
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  call-workflow:
+    uses: apertium/github-actions/.github/workflows/bilingual-build.yml@master
+    with:
+      lang1: apertium-xxx
+      lang2: apertium-yyy

@@ -1,0 +1,7 @@
+{
+    "name": "Apertium Bilingual CI/CD",
+    "description": "Apertium Bilingual CI/CD template",
+    "filePatterns": [
+        "^modes.xml"
+    ]
+}

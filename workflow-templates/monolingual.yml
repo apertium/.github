@@ -7,18 +7,5 @@ on:
     branches: [ $default-branch ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: |
-          wget https://apertium.projectjj.com/apt/install-nightly.sh -O - | sudo bash
-          sudo apt-get install -qfy apertium-dev apertium-lex-tools cg3-dev gawk pkg-config
-
-      - name: Run a one-line script
-        run: |
-          ./autogen.sh
-          make -j2
-          make test
+  call-workflow:
+    uses: apertium/github-actions/.github/workflows/monolingual-build.yml@master
